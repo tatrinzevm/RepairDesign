@@ -85,6 +85,7 @@ a {
  */
 abbr[title] {
   text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted; }
 
 /**

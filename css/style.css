@@ -380,9 +380,15 @@ template {
   font-family: 'Futura Demi', sans-serif;
   font-weight: 500;
   font-size: 13px; }
+  .button:hover {
+    cursor: pointer; }
   .button--primary {
     background-color: #e3b873;
-    color: #fff; }
+    color: #fff;
+    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
+    transition: box-shadow .3s; }
+    .button--primary:hover {
+      box-shadow: none; }
   .button--outline {
     border: 1px solid #fff;
     background-color: transparent;
@@ -410,7 +416,10 @@ template {
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
-  margin-right: 40px; }
+  margin-right: 40px;
+  transition: color .2s; }
+  .nav__item:hover {
+    color: #e3b873; }
 
 .phone {
   color: #e3b873; }
@@ -427,7 +436,16 @@ template {
   flex-direction: column;
   justify-content: center;
   padding-top: 89px; }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 19, 19, 0.7); }
   .hero__content {
+    position: relative;
     max-width: 670px; }
   .hero__text {
     font-size: 22px;
@@ -453,6 +471,15 @@ template {
     text-transform: uppercase;
     text-decoration: none;
     color: #fff; }
+    .hero__scroll-down::after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #e3b873;
+      background: url("../img/ico/arrow-down.svg") no-repeat center;
+      background-color: transparent;
+      margin-left: 12px; }
 
 .instagram {
   background-color: #131313;
@@ -460,10 +487,19 @@ template {
   align-items: center;
   justify-content: center; }
   .instagram__link {
+    display: flex;
+    align-items: center;
     transform: rotate(90deg);
     text-transform: uppercase;
     color: #e3b873;
-    text-decoration: none; }
+    text-decoration: none;
+    line-height: 0.8; }
+    .instagram__link::after {
+      content: '';
+      width: 51px;
+      height: 1px;
+      background-color: #e3b873;
+      margin-left: 8px; }
 
 .title {
   margin-top: 0;

@@ -353,6 +353,20 @@ template {
 [hidden] {
   display: none; }
 
+@font-face {
+  font-family: 'Futura Demi';
+  src: url("../fonts/Futura/FuturaDemiC.woff") format("woff"), url("../fonts/Futura/FuturaDemiC.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: wrap; }
+
+@font-face {
+  font-family: 'Futura Book';
+  src: url("../fonts/Futura/FuturaBookC.woff") format("woff"), url("../fonts/Futura/FuturaBookC.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: wrap; }
+
 .container {
   max-width: 1256px;
   margin: auto; }
@@ -392,5 +406,5 @@ template {
   margin-right: 45px; }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Futura Book', sans-serif;
   font-size: 14px; }

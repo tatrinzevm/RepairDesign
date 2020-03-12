@@ -5,14 +5,26 @@
   width: 100%
   z-index: 99
   background-color: $dark
-  padding: 24px 0
+  padding: 0
+  display: flex
+  align-items: flex-start
+  justify-content: center
+  // padding: 24px 0
+  &__container
+    display: flex
+    justify-content: flex-start
+  // &__menu
+  //   // margin: 0 auto
 
 .menu
+  width: 100%
+  max-width: 1256px
   display: flex
   justify-content: space-between
   align-items: center
+  padding: 1.571rem 0
   &__logo
-    margin: -1.357rem
+    margin: 0
   &__nav
     margin-left: 0rem
 
@@ -23,6 +35,7 @@
   font-size: 1rem
 
 .nav
+  padding-left: 1.2rem
   &__item
     font-family: 'Futura Book', cursive
     font-size: 1rem
@@ -30,7 +43,7 @@
     text-decoration: none
     color: $light
     text-transform: uppercase
-    margin-right: 1.5rem
+    margin-right: 2.65rem
     transition: color .2s
     &:hover
       color: $primary
@@ -40,4 +53,6 @@
 
 .contacts
   &__phone
-    margin-right: 45px
+    margin-right: 3.15rem
+  &__button
+    margin-right: 0

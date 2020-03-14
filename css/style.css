@@ -473,7 +473,7 @@ img {
   width: 100%;
   z-index: 99;
   background-color: #131313;
-  padding: 0;
+  padding: 0 5.71rem;
   display: flex;
   align-items: flex-start;
   justify-content: center; }
@@ -716,6 +716,8 @@ img {
   font-weight: normal; }
 
 .modal {
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -728,6 +730,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: center; }
+  .modal--visibility {
+    opacity: 1;
+    visibility: visible; }
   .modal__dialog {
     position: relative;
     background: #131313 url("../img/bg-lines.svg") no-repeat center;
@@ -795,9 +800,11 @@ img {
     height: 100%; } }
 
 @media screen and (max-width: 992px) {
-  .header__container {
-    padding: 0 1.5rem;
-    width: 100%; }
+  .header {
+    padding: 0; }
+    .header__container {
+      padding: 0 1.5rem;
+      width: 100%; }
   .nav {
     display: none; }
   .hero__instagram {

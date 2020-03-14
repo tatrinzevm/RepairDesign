@@ -10,5 +10,19 @@ document.addEventListener('DOMContentLoaded', function(event) {
     element.addEventListener('click', switchModal);
   });
 
+  document.addEventListener('click', function (event) {
+    if(modal.classList.contains('modal--visibility')) {
+      if(event.target.classList.contains('modal')) {
+        switchModal();
+      }
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if(modal.classList.contains('modal--visibility') && event.keyCode == 27) {
+      switchModal();
+    }
+  });
+
   modalClose.addEventListener('click', switchModal);
 });

@@ -780,15 +780,20 @@ img {
   color: #fff;
   padding: 0.5rem 0; }
   .input::-webkit-input-placeholder {
-    color: #fff; }
+    color: #fff;
+    opacity: 1; }
   .input::-moz-placeholder {
-    color: #fff; }
+    color: #fff;
+    opacity: 1; }
   .input:-ms-input-placeholder {
-    color: #fff; }
+    color: #fff;
+    opacity: 1; }
   .input::-ms-input-placeholder {
-    color: #fff; }
+    color: #fff;
+    opacity: 1; }
   .input::placeholder {
-    color: #fff; }
+    color: #fff;
+    opacity: 1; }
 
 @media screen and (max-width: 1280px) {
   html {

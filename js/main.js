@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(event) {
+/*document.addEventListener('DOMContentLoaded', function(event) {
   const modal = document.querySelector('.modal');
   const modalBtn = document.querySelectorAll('[data-toggle=modal]');
   const modalClose = document.querySelector('.modal__close')
@@ -25,4 +25,33 @@ document.addEventListener('DOMContentLoaded', function(event) {
   });
 
   modalClose.addEventListener('click', switchModal);
+});*/
+
+$(document).ready(function () {
+  var modal = $('.modal'),
+      modalBtn = $('[data-toggle=modal]'),
+      closeBtn = $('.modal__close');
+  
+  modalBtn.on('click', function () {
+    modal.toggleClass('modal--visibility');
+  });
+
+  closeBtn.on('click', function () {
+    modal.toggleClass('modal--visibility');
+  });
+
+  $(document).on('click', function (evt) {
+    if(!modal.is(':hidden')) {
+      if(evt.target.classList.contains('modal')) {
+        modal.toggleClass('modal--visibility');
+      }
+    } 
+  });
+
+  $(document).on('keydown', function (evt) {
+    console.dir(evt.keyCode);
+    if(!modal.is(':hidden') && evt.keyCode == 27) {
+      modal.toggleClass('modal--visibility');
+    }
+  });
 });

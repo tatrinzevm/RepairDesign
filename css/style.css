@@ -411,6 +411,16 @@ main {
     max-height: 2.643rem;
     padding: 0.8rem 1.429rem;
     vertical-align: center; }
+  .button__scroll-up__flex-block {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 299;
+    width: 100%; }
+    .button__scroll-up__flex-block--hidden {
+      visibility: hidden; }
 
 .policy__checkbox {
   opacity: 0;
@@ -465,6 +475,18 @@ img {
       .section-title__image img {
         margin-left: 10px;
         margin-right: 10px; }
+
+@-webkit-keyframes appBtnScrollUp {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes appBtnScrollUp {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .header {
   position: fixed;

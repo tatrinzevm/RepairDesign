@@ -26,26 +26,29 @@
 
   modalClose.addEventListener('click', switchModal);
 });*/
+/*Переписываем функционал с применением библиотеки jQuery*/
 
 $(document).ready(function () {
   var modal = $('.modal'),
       modalBtn = $('[data-toggle=modal]'),
-      closeBtn = $('.modal__close');
-  
+      closeBtn = $('.modal__close'),
+      scrollUpBtn = $('.button__scroll-up__flex-block');
+  // scrollUpBtn.removeClass(0);
   modalBtn.on('click', function () {
     modal.toggleClass('modal--visibility');
   });
 
+  /*Привязка на кнопку отслеживания события click, которое вызывает открытие модального окна*/
   closeBtn.on('click', function () {
     modal.toggleClass('modal--visibility');
   });
 
+  /*Обработчик события click на кнопку закрытия модального окна. После */
+
   $(document).on('click', function (evt) {
-    if(!modal.is(':hidden')) {
-      if(evt.target.classList.contains('modal')) {
-        modal.toggleClass('modal--visibility');
-      }
-    } 
+    if(evt.target.classList.contains('modal')) {
+      modal.toggleClass('modal--visibility');
+    }
   });
 
   $(document).on('keydown', function (evt) {
@@ -53,5 +56,17 @@ $(document).ready(function () {
     if(!modal.is(':hidden') && evt.keyCode == 27) {
       modal.toggleClass('modal--visibility');
     }
+  });
+
+  $(window).on('scroll', function () {
+    if($(window).scrollTop()>100) {
+      scrollUpBtn.removeClass('button__scroll-up__flex-block--hidden');
+    } else {
+      scrollUpBtn.addClass('button__scroll-up__flex-block--hidden');
+    }
+  });
+
+  scrollUpBtn.on('click', function () {
+    $("html,body").animate({scrollTop:0},500);
   });
 });

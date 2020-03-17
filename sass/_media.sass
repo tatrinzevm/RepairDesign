@@ -8,6 +8,9 @@
     &__image
       width: 100%
       height: 100%
+  .section
+    &--dark
+      padding: 0 1.5rem
 
 @media screen and ( max-width: 992px)
   .header
@@ -37,11 +40,21 @@
       margin-left: 0
     &__pricetag
       bottom: 0
+  .col
+    &-50
+      padding-bottom: 3.333rem
+  
 
 @media screen and (max-width: 760px)
   .row
     flex-direction: column
     align-items: center
+  
+  .section
+    &--dark
+      padding: 0 1.5rem
+  
+  
 
   
 
@@ -99,12 +112,17 @@
       min-height: 4.25rem
   
   .section-title
+    &--left
+      padding-top: 3.1rem
+      letter-spacing: -0.07rem
     &__heading
       font-size: 1.833rem
       // line-height: 2.3rem
       &--light
         color: $light
         margin-bottom: 1.3rem
+      &--primary
+        font-size: 1.833rem
     &__image
       margin-bottom: 3.333rem
       &--design
@@ -112,11 +130,18 @@
     &__text
       font-size: 1.25rem
       padding: 0 1.7rem
+      &--projects
+        font-size: 1.167rem
+        letter-spacing: 0
+        max-width: 25.416rem
       &--light
         color: $light
         line-height: 1.75rem
         padding-top: 0.1rem
         margin-bottom: 3rem
+    &__word
+      &::after
+        display: none
   .types
     padding: 0 1.5rem
     &__section-title
@@ -152,7 +177,43 @@
         display: flex
         overflow: hidden
 
-    
+  .section
+    &--dark
+      padding: 0 1.5rem
+  .swiper
+    &-slide
+      padding-bottom: 1.8rem
+      width: 100%
+      &__heading
+        font-size: 1.167rem
+      &__text
+        flex-basis: 50%
+        max-width: 50%
+        justify-content: flex-start
+        font-size: 1.167rem
+        padding-bottom: 3rem
+        margin-bottom: 0
+      &-bullet
+        width: 8px
+        height: 8px
+    &-container
+      &--images
+        max-height: 16.833rem
+        overflow: hidden
+  .col
+    &-40, &-60, &-50
+      flex-basis: 100%
+      max-width: 100%
+      padding-bottom: 3.333rem
+    &-60
+      max-height: 16.833rem
+      padding: 0
+    &-40
+      padding-bottom: 2.8rem
+  .swiper-container-horizontal>.swiper-pagination-bullets
+    width: auto
+    bottom: -2px
+
 
 
 

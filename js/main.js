@@ -60,9 +60,9 @@ $(document).ready(function () {
 
   $(window).on('scroll', function () {
     if($(window).scrollTop()>100) {
-      scrollUpBtn.removeClass('button__scroll-up__flex-block--hidden');
+      scrollUpBtn.removeClass('button__scroll-up__flex-block--hidden wow bounceInUp');
     } else {
-      scrollUpBtn.addClass('button__scroll-up__flex-block--hidden');
+      scrollUpBtn.addClass('button__scroll-up__flex-block--hidden wow bounceInUp');
     }
   });
 
@@ -89,4 +89,6 @@ $(document).ready(function () {
       bullets = $('.swiper-pagination');
   nextBtn.css('left', prevBtn.width() + 27 + bullets.width() + 27);
   bullets.css('left', prevBtn.width() + 27);
+
+  new WOW().init();
 });

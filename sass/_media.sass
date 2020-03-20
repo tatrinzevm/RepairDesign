@@ -10,7 +10,12 @@
       height: 100%
   .section
     &--dark
-      padding: 0 1.5rem
+      padding: 0 1.5rem 23rem 1.5rem
+  .hero
+    padding-bottom: 5rem
+    padding-left: 0
+    padding-right: 0
+  
 
 @media screen and ( max-width: 992px)
   .header
@@ -52,10 +57,53 @@
   
   .section
     &--dark
-      padding: 0 1.5rem
+      padding: 0 1.5rem 23rem 1.5rem
+  .control
+    &__container
+      padding-left: 1.5rem
+      padding-right: 1.5rem
   
   
-
+@media screen and ( max-width: 600px)
+  .swiper
+    &-slide
+      padding-bottom: 0
+  .row
+    flex-direction: row
+  .col-40, .col-60
+    flex-basis: 30%
+  .control
+    padding-bottom: 0
+    &__heading
+      padding-top: 2rem
+    &__form
+      justify-content: flex-start
+    &__input
+      font-size: 1.5rem
+      margin-bottom: 0
+      padding-top: 0.1rem
+      border-color: rgba($light, 0.5)
+      &::placeholder
+        font-family: 'Futura Book', sans-serif
+        color: $darkGray
+        opacity: 1
+    &__input-group
+      &:first-of-type
+        margin-bottom: 5.1rem
+    &__button
+      max-width: 100%
+      order: 4
+      font-size: 1.25rem
+      max-height: 4.25rem
+    &__policy
+      margin-top: 1rem
+      &-label
+        padding: 0
+        margin: 0
+        justify-content: flex-start
+        font-size: 1.333rem
+        color: $gray
+        margin-bottom: 5.3rem
   
 
 @media screen and ( max-width: 576px)
@@ -179,7 +227,7 @@
 
   .section
     &--dark
-      padding: 0 1.5rem
+      padding: 0 1.5rem 73rem 1.5rem
   .swiper
     &-slide
       padding-bottom: 1.8rem
@@ -200,6 +248,8 @@
       &--images
         max-height: 16.833rem
         overflow: hidden
+  .row
+    flex-direction: column
   .col
     &-40, &-60, &-50
       flex-basis: 100%
@@ -213,6 +263,66 @@
   .swiper-container-horizontal>.swiper-pagination-bullets
     width: auto
     bottom: -2px
+  .control
+    padding-bottom: 0.5rem
+    &__heading
+      padding-top: 0
+      margin-top: 0
+      margin-bottom: 2rem
+    &__video
+      max-width: 28.333rem
+      min-height: 17.25rem
+      background-size: cover
+      margin-bottom: 2.333rem
+    &__text
+      color: $light
+      font-size: 1.167rem
+      line-height: 172%
+      padding-bottom: 0
+      margin-bottom: 2.3rem
+      &::before
+        margin-bottom: 1.4rem
+    &__section-title
+      margin-top: -68.5rem
+    &__input-group
+      flex-basis: 100%
+    &__label
+      color: rgba($light, 0.5)
+      font-size: 1.25rem
+      margin-bottom: 0
+    &__form
+      justify-content: flex-start
+    &__input
+      font-size: 1.5rem
+      margin-bottom: 0
+      padding-top: 0.1rem
+      border-color: rgba($light, 0.5)
+      &::placeholder
+        font-family: 'Futura Book', sans-serif
+        color: $light
+        opacity: 1
+    &__input-group
+      &:first-of-type
+        margin-bottom: 5.1rem
+    &__button
+      max-width: 100%
+      order: 4
+      font-size: 1.25rem
+      max-height: 4.25rem
+    &__policy
+      margin-top: 1rem
+      &-label
+        padding: 0
+        margin: 0
+        justify-content: flex-start
+        font-size: 1.333rem
+        color: $light
+        margin-bottom: 5.3rem
+  .video
+    &__play
+      padding-top: 0.5rem
+      width: 70px
+      height: 70px
 
 
 

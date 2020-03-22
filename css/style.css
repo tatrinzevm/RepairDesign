@@ -734,7 +734,8 @@ img {
     color: #e3b873; }
 
 .control {
-  background-color: #fff; }
+  background-color: #fff;
+  padding-bottom: 0; }
   .control__section-title {
     margin-bottom: 2.214rem;
     margin-top: -30rem; }
@@ -889,20 +890,99 @@ img {
   text-transform: uppercase;
   font-weight: normal; }
 
-.design {
-  padding-bottom: 30rem; }
+.designs {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 22rem; }
+  .designs__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .designs__section-title {
+    margin-bottom: 2.214rem; }
+
+.section-title__heading {
+  font-size: 1.429rem;
+  line-height: 1.786rem; }
+
+.section-title__text {
+  font-family: 'Futura Book', sans-serif;
+  font-size: 1.429rem;
+  font-weight: normal;
+  line-height: 1.95rem;
+  text-transform: none;
+  max-width: 52.929rem;
+  margin: 0 auto;
+  margin-top: 1.25rem;
+  margin-bottom: 1.2rem; }
+
+.section-title__image {
+  margin-bottom: 0; }
+
+.card__image {
+  max-width: 392px;
+  max-height: 421px; }
+  .card__image--mobile {
+    display: none; }
+
+.card__text {
+  position: relative;
+  margin: 0 auto;
+  margin-top: -34%;
+  background-color: #fff;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03);
+  max-width: 23.571rem;
+  padding: 1.786rem 2.071rem 3.5rem 2.429rem; }
+
+.card__title {
+  font-family: 'Yeseva One', sans-serif;
+  font-size: 1.286rem;
+  font-weight: normal;
+  color: #363636;
+  margin-bottom: 0.5rem; }
+
+.card__list {
+  padding-left: 1.2rem; }
+
+.card__item {
+  font-family: 'Futura Book', sans-serif;
+  font-size: 1.071rem;
+  font-weight: normal;
+  color: #959595;
+  margin-bottom: 0.6rem; }
+
+.card__pricetag {
+  display: inline-block;
+  padding: 1rem 0 1rem 2.357rem;
+  text-align: left;
+  position: absolute;
+  left: 0.15rem;
+  bottom: -1.7rem;
+  width: 16.286rem;
+  height: 3.857rem;
+  background-color: #e3b873;
+  color: #fff;
+  font-family: 'Yeseva One', sans-serif;
+  font-size: 1.286rem;
+  text-transform: uppercase;
+  font-weight: normal; }
 
 .footer {
   background: #131313 url("../img/footer-bg.jpg") no-repeat center/cover;
   padding-left: 0;
   position: relative; }
   .footer__container {
+    position: relative;
     margin: 0 auto; }
   .footer__input--light {
     font-family: 'Futura Book', cursive;
     width: 100%;
     line-height: 1.714rem; }
   .footer__wrap {
+    position: relative;
     background-color: #181818;
     max-width: 63.071rem;
     margin: auto;
@@ -946,10 +1026,41 @@ img {
     margin-bottom: 3.5rem; }
   .footer__button {
     margin: auto; }
+  .footer__heading {
+    display: block;
+    margin: auto;
+    margin-bottom: 1.857rem;
+    text-transform: uppercase;
+    color: #e3b873;
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.429rem;
+    text-align: center;
+    max-width: 38rem; }
   .footer__menu {
     width: 100%;
     background-color: #131313;
     padding: 3.429rem 0; }
+  .footer__icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3.071rem; }
+    .footer__icons-wrap--e-mail {
+      width: 28px;
+      height: 28px;
+      background: #e3b873 url("../img/ico/e-mail-ico.svg") no-repeat center;
+      border-radius: 50%;
+      margin-right: 1.071rem; }
+    .footer__icons-wrap--insta {
+      width: 28px;
+      height: 28px;
+      background: #e3b873 url("../img/ico/insta-ico.svg") no-repeat center;
+      border-radius: 50%; }
+  .footer__map {
+    margin: 0 auto 4.643rem auto; }
+
+.map {
+  max-width: 66.071rem;
+  max-height: 33.214rem; }
 
 .modal {
   opacity: 0;
@@ -1029,6 +1140,8 @@ img {
 
 .projects {
   padding-bottom: 30rem; }
+  .projects__section--dark {
+    padding-top: 5rem; }
 
 .swiper__container {
   justify-content: space-between; }
@@ -1087,12 +1200,30 @@ img {
   .card__image {
     width: 100%;
     height: 100%; }
-  .section--dark {
+  .projects__section--dark {
     padding: 0 1.5rem 23rem 1.5rem; }
   .hero {
     padding-bottom: 5rem;
     padding-left: 0;
-    padding-right: 0; } }
+    padding-right: 0; }
+  .footer__section {
+    min-width: 100%; }
+  .footer__wrap {
+    margin-top: -25rem; }
+  .footer__menu {
+    padding: 1rem 0; }
+  .footer__map {
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-bottom: 6rem; }
+  .designs {
+    padding-bottom: 0; }
+    .designs__container {
+      padding-bottom: 25rem; } }
 
 @media screen and (max-width: 992px) {
   .header {
@@ -1120,7 +1251,10 @@ img {
   .card__pricetag {
     bottom: 0; }
   .col-50 {
-    padding-bottom: 3.333rem; } }
+    padding-bottom: 3.333rem; }
+  .footer__menu__container {
+    padding: 0 1.5rem;
+    width: 100%; } }
 
 @media screen and (max-width: 760px) {
   .row {
@@ -1130,7 +1264,31 @@ img {
     padding: 0 1.5rem 23rem 1.5rem; }
   .control__container {
     padding-left: 1.5rem;
-    padding-right: 1.5rem; } }
+    padding-right: 1.5rem; }
+  .projects__section--dark {
+    padding: 0 1.5rem 23rem 1.5rem; }
+  .designs__container {
+    padding-bottom: 1.5rem; }
+  .footer__section {
+    min-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0; }
+  .footer__wrap {
+    margin-top: 0rem; }
+  .footer__menu {
+    padding: 1rem 0; }
+    .footer__menu__container {
+      padding: 0 1.5rem;
+      width: 100%; }
+  .footer__map {
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-bottom: 6rem; } }
 
 @media screen and (max-width: 600px) {
   .swiper-slide {
@@ -1319,6 +1477,8 @@ img {
   .swiper-container--images {
     max-height: 16.833rem;
     overflow: hidden; }
+  .designs--dark {
+    background-color: #252525; }
   .row {
     flex-direction: column; }
   .col-40, .col-60, .col-50 {
@@ -1412,6 +1572,9 @@ img {
     width: 100%;
     padding: 6.33rem 1.5rem 5rem 1.5rem; }
     .footer__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
       background: #252525; }
     .footer__title {
@@ -1440,6 +1603,30 @@ img {
       text-transform: uppercase; }
     .footer__menu {
       display: none; }
+    .footer__heading {
+      font-size: 1.5rem;
+      padding: 0 1rem;
+      line-height: 130%;
+      margin-bottom: 2rem;
+      order: 3; }
+    .footer__icons {
+      order: 4;
+      margin-bottom: 3.4rem; }
+      .footer__icons-wrap--e-mail {
+        width: 39px;
+        height: 39px;
+        margin-right: 1.5rem;
+        background-size: 22px; }
+      .footer__icons-wrap--insta {
+        width: 39px;
+        height: 39px;
+        background-size: 20px; }
+    .footer__map {
+      width: 100%;
+      overflow: hidden;
+      max-height: 21.5rem;
+      padding: 0;
+      margin-bottom: 3.5rem; }
   .policy__label--center {
     font-size: 1.333rem;
     justify-content: flex-start; } }

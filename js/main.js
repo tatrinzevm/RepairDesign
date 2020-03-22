@@ -30,6 +30,7 @@
 
 $(document).ready(function () {
   var modal = $('.modal'),
+      modalForm = $('.modal__form'),
       modalBtn = $('[data-toggle=modal]'),
       closeBtn = $('.modal__close'),
       scrollUpBtn = $('.button__scroll-up__flex-block');
@@ -91,4 +92,105 @@ $(document).ready(function () {
   bullets.css('left', prevBtn.width() + 27);
 
   new WOW().init();
+
+  //Валидация форм
+  // Форма модального окна
+  $('.modal__form').validate({
+    errorClass: "invalid",
+    validClass: "success",
+    rules: {
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15
+      },
+      userPhone: {
+        required: true,
+        minlength: 18,
+        maxlength: 18
+      },
+      userEmail: {
+        required: true,
+        email: true
+      }
+    },
+    messages: {
+      userName: {
+        required: "Пожалуйста, укажите имя",
+        minlength: "Имя не должно быть короче двух символов",
+        maxlength: "Имя не должно быть длиннее пятнадцати символов"
+      },
+      userPhone: {
+        required: "Пожалуйста, укажите номер телефона",
+        minlength: "Некорректный номер телефона",
+        maxlength: "Некорректный номер телефона"
+      },
+      userEmail: {
+        required: "Пожалуста, укажите email",
+        email: "Email ожидается в формате name@domain.com"
+      }
+    }
+  });
+  //Форма блока контроль
+  $('.control__form').validate({
+    errorClass: "invalid",
+    validClass: "success",
+    rules: {
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15
+      },
+      userPhone: {
+        required: true,
+        minlength: 18,
+        maxlength: 18
+      }
+    },
+    messages: {
+      userName: {
+        required: "Пожалуйста, укажите имя",
+        minlength: "Имя не должно быть короче двух символов",
+        maxlength: "Имя не должно быть длиннее пятнадцати символов"
+      },
+      userPhone: {
+        required: "Пожалуйста, укажите номер телефона",
+        minlength: "Некорректный номер телефона",
+        maxlength: "Некорректный номер телефона"
+      }
+    }
+  });
+  //Валидация формы footer
+  $('.footer__form').validate({
+    errorClass: "invalid",
+    validClass: "success",
+    rules: {
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15
+      },
+      userPhone: {
+        required: true,
+        minlength: 18,
+        maxlength: 18
+      },
+      userQuestion: "required"
+    },
+    messages: {
+      userName: {
+        required: "Пожалуйста, укажите имя",
+        minlength: "Имя не должно быть короче двух символов",
+        maxlength: "Имя не должно быть длиннее пятнадцати символов"
+      },
+      userPhone: {
+        required: "Пожалуйста, укажите номер телефона",
+        minlength: "Некорректный номер телефона",
+        maxlength: "Некорректный номер телефона"
+      },
+      userQuestion: "Пожалуйста, напишите свой вопрос"
+    }
+  });
+  // Маска для номера телефона
+  $('[type=tel]').mask('+7 (000) 000-00-00');
 });

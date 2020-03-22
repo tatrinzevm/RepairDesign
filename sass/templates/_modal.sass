@@ -45,6 +45,9 @@
     margin-bottom: 3.428rem
     &:last-of-type
       margin-bottom: 1rem
+    &-group
+      display: flex
+      flex-direction: column
     &--light
       &::placeholder
         color: $light
@@ -53,5 +56,10 @@
     margin-bottom: 2.7rem
   &__button
     align-self: flex-end
+
+.success
+  background-color: rgba($isValid, 0.1)
+.input.invalid
+  background-color: rgba($isInvalid, 0.1)
 
 

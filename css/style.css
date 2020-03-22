@@ -405,6 +405,9 @@ main {
   flex-basis: 40%;
   max-width: 40%; }
 
+button:active, button:focus {
+  outline: none; }
+
 .button {
   width: 100%;
   height: 100%;
@@ -459,6 +462,8 @@ main {
     background: #e3b873 url("../img/ico/checked.svg") no-repeat center/0.8rem; }
 
 .policy__label {
+  font-family: 'Futura Book', cursive;
+  font-size: 1.071rem;
   display: flex;
   align-items: center; }
   .policy__label::before {
@@ -469,6 +474,8 @@ main {
     border-radius: 1px;
     cursor: pointer;
     margin-right: 0.64rem; }
+  .policy__label--center {
+    justify-content: center; }
 
 .label {
   font-size: 1.07rem; }
@@ -593,6 +600,8 @@ img {
   .menu__contacts {
     display: flex;
     align-items: center; }
+  .menu--footer {
+    padding: 0; }
 
 .logo {
   font-family: 'Futura Demi', cursive;
@@ -774,16 +783,18 @@ img {
     display: flex;
     flex-direction: column;
     flex-basis: 30%; }
-  .control__input::-webkit-input-placeholder {
+  .control__input {
     color: #363636; }
-  .control__input::-moz-placeholder {
-    color: #363636; }
-  .control__input:-ms-input-placeholder {
-    color: #363636; }
-  .control__input::-ms-input-placeholder {
-    color: #363636; }
-  .control__input::placeholder {
-    color: #363636; }
+    .control__input::-webkit-input-placeholder {
+      color: #363636; }
+    .control__input::-moz-placeholder {
+      color: #363636; }
+    .control__input:-ms-input-placeholder {
+      color: #363636; }
+    .control__input::-ms-input-placeholder {
+      color: #363636; }
+    .control__input::placeholder {
+      color: #363636; }
   .control__label {
     color: rgba(19, 19, 19, 0.5);
     margin-bottom: -7px; }
@@ -803,7 +814,8 @@ img {
   background-color: #fff;
   display: flex;
   flex-direction: row;
-  justify-content: center; }
+  justify-content: center;
+  padding-bottom: 5rem; }
   .types__container {
     display: flex;
     flex-direction: column;
@@ -877,6 +889,68 @@ img {
   text-transform: uppercase;
   font-weight: normal; }
 
+.design {
+  padding-bottom: 30rem; }
+
+.footer {
+  background: #131313 url("../img/footer-bg.jpg") no-repeat center/cover;
+  padding-left: 0;
+  position: relative; }
+  .footer__container {
+    margin: 0 auto; }
+  .footer__input--light {
+    font-family: 'Futura Book', cursive;
+    width: 100%;
+    line-height: 1.714rem; }
+  .footer__wrap {
+    background-color: #181818;
+    max-width: 63.071rem;
+    margin: auto;
+    padding: 2.5rem;
+    margin-bottom: 3.714rem;
+    margin-top: -27rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+  .footer__title {
+    margin-top: 0;
+    text-transform: uppercase;
+    font-family: 'Yeseva One', cursive;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.428rem;
+    text-align: center;
+    margin-bottom: 3.214rem; }
+  .footer__form {
+    margin: 0;
+    max-width: 36.928rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+  .footer__input-group {
+    display: flex;
+    flex-direction: column;
+    max-width: 16.5rem;
+    flex-basis: 50%;
+    margin-bottom: 3.2rem; }
+    .footer__input-group--full-width {
+      flex-basis: 100%;
+      max-width: 36.928rem; }
+      .footer__input-group--full-width > .form__input {
+        padding-top: 0; }
+    .footer__input-group:nth-of-type(3) {
+      margin-bottom: 1.8rem; }
+  .footer__policy {
+    flex-basis: 100%;
+    margin-bottom: 3.5rem; }
+  .footer__button {
+    margin: auto; }
+  .footer__menu {
+    width: 100%;
+    background-color: #131313;
+    padding: 3.429rem 0; }
+
 .modal {
   opacity: 0;
   visibility: hidden;
@@ -924,6 +998,9 @@ img {
     margin-bottom: 3.428rem; }
     .modal__input:last-of-type {
       margin-bottom: 1rem; }
+    .modal__input-group {
+      display: flex;
+      flex-direction: column; }
     .modal__input--light::-webkit-input-placeholder {
       color: #fff;
       opacity: 1; }
@@ -943,6 +1020,12 @@ img {
     margin-bottom: 2.7rem; }
   .modal__button {
     align-self: flex-end; }
+
+.success {
+  background-color: rgba(103, 181, 137, 0.1); }
+
+.input.invalid {
+  background-color: rgba(189, 90, 79, 0.1); }
 
 .projects {
   padding-bottom: 30rem; }
@@ -1217,7 +1300,7 @@ img {
       display: flex;
       overflow: hidden; }
   .section--dark {
-    padding: 0 1.5rem 73rem 1.5rem; }
+    padding: 0 1.5rem 83rem 1.5rem; }
   .swiper-slide {
     padding-bottom: 1.8rem;
     width: 100%; }
@@ -1270,7 +1353,7 @@ img {
       .control__text::before {
         margin-bottom: 1.4rem; }
     .control__section-title {
-      margin-top: -68.5rem; }
+      margin-top: -78.5rem; }
     .control__input-group {
       flex-basis: 100%; }
     .control__label {
@@ -1323,7 +1406,43 @@ img {
   .video__play {
     padding-top: 0.5rem;
     width: 70px;
-    height: 70px; } }
+    height: 70px; }
+  .footer {
+    background: #252525;
+    width: 100%;
+    padding: 6.33rem 1.5rem 5rem 1.5rem; }
+    .footer__container {
+      width: 100%;
+      background: #252525; }
+    .footer__title {
+      font-size: 1.667rem;
+      margin-bottom: 4.333rem; }
+    .footer__wrap {
+      background: #252525;
+      padding: 0;
+      width: 100%;
+      margin-top: 0; }
+    .footer__input-group {
+      flex-basis: 100%; }
+      .footer__input-group:nth-of-type(3) {
+        margin-bottom: 0; }
+        .footer__input-group:nth-of-type(3) > .input {
+          margin-bottom: 1rem; }
+    .footer__input--light {
+      font-size: 1.5rem;
+      margin-bottom: 2rem; }
+    .footer__policy {
+      margin-bottom: 5.583rem; }
+    .footer__button {
+      min-width: 100%;
+      max-height: 4.25rem;
+      font-size: 1.25rem;
+      text-transform: uppercase; }
+    .footer__menu {
+      display: none; }
+  .policy__label--center {
+    font-size: 1.333rem;
+    justify-content: flex-start; } }
 
 @media screen and (max-height: 544px) {
   .hero__scroll-down {

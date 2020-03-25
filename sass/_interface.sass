@@ -49,13 +49,17 @@ button
       width: 100%
       &--hidden
         visibility: hidden
-    
-
+  &Return
+    padding: 1rem 3rem
+    color: $light
+    background-color: $primary
+    text-align: center
+    text-decoration: none
 .policy
   &__checkbox
     opacity: 0
     visibility: hidden
-    &:checked +
+    &:checked ~
       .policy__label
         &::before
           background: $primary url('../img/ico/checked.svg') no-repeat center / 0.8rem
@@ -87,4 +91,10 @@ button
   font-size: 1.285rem
   color: $light
   padding: 0.5rem 0
+
+.success
+  background-color: rgba($isValid, 0.1)
+.input.invalid
+  background-color: rgba($isInvalid, 0.1)
+
  

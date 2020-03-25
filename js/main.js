@@ -112,7 +112,8 @@ $(document).ready(function () {
       userEmail: {
         required: true,
         email: true
-      }
+      },
+      policyCheckbox: "required"
     },
     messages: {
       userName: {
@@ -128,7 +129,8 @@ $(document).ready(function () {
       userEmail: {
         required: "Пожалуста, укажите email",
         email: "Email ожидается в формате name@domain.com"
-      }
+      },
+      policyCheckbox: "Вы должны согласиться с обработкой данных до отправки формы"
     }
   });
   //Форма блока контроль
@@ -145,7 +147,8 @@ $(document).ready(function () {
         required: true,
         minlength: 18,
         maxlength: 18
-      }
+      },
+      controlPolicyCheckbox: "required"
     },
     messages: {
       userName: {
@@ -157,7 +160,8 @@ $(document).ready(function () {
         required: "Пожалуйста, укажите номер телефона",
         minlength: "Некорректный номер телефона",
         maxlength: "Некорректный номер телефона"
-      }
+      },
+      controlPolicyCheckbox: "Вы должны согласиться с обработкой данных до отправки формы"
     }
   });
   //Валидация формы footer
@@ -175,7 +179,8 @@ $(document).ready(function () {
         minlength: 18,
         maxlength: 18
       },
-      userQuestion: "required"
+      userQuestion: "required",
+      questionPolicyCheckbox: "required"
     },
     messages: {
       userName: {
@@ -188,7 +193,8 @@ $(document).ready(function () {
         minlength: "Некорректный номер телефона",
         maxlength: "Некорректный номер телефона"
       },
-      userQuestion: "Пожалуйста, напишите свой вопрос"
+      userQuestion: "Пожалуйста, напишите свой вопрос",
+      questionPolicyCheckbox: "Вы должны согласиться с обработкой данных до отправки формы"
     }
   });
   // Маска для номера телефона

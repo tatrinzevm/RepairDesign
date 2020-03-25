@@ -454,11 +454,17 @@ button:active, button:focus {
       width: 100%; }
       .button__scroll-up__flex-block--hidden {
         visibility: hidden; }
+  .buttonReturn {
+    padding: 1rem 3rem;
+    color: #fff;
+    background-color: #e3b873;
+    text-align: center;
+    text-decoration: none; }
 
 .policy__checkbox {
   opacity: 0;
   visibility: hidden; }
-  .policy__checkbox:checked + .policy__label::before {
+  .policy__checkbox:checked ~ .policy__label::before {
     background: #e3b873 url("../img/ico/checked.svg") no-repeat center/0.8rem; }
 
 .policy__label {
@@ -489,6 +495,12 @@ button:active, button:focus {
   font-size: 1.285rem;
   color: #fff;
   padding: 0.5rem 0; }
+
+.success {
+  background-color: rgba(103, 181, 137, 0.1); }
+
+.input.invalid {
+  background-color: rgba(189, 90, 79, 0.1); }
 
 *, *:before, *:after {
   box-sizing: border-box; }
@@ -558,6 +570,31 @@ img {
       .section-title__image img {
         margin-left: 10px;
         margin-right: 10px; }
+  .sectionThankYouPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #131313;
+    min-width: 100vw;
+    min-height: 100vh; }
+
+.thankYouPageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  width: 50vw;
+  height: 50vh;
+  background-color: #181818;
+  box-shadow: 0 0 20px rgba(227, 184, 115, 0.3); }
+
+.thankYouPageContent {
+  color: #e3b873;
+  font-size: 14px;
+  text-align: center;
+  max-width: 80%;
+  margin-bottom: 3rem; }
 
 @-webkit-keyframes appBtnScrollUp {
   0% {
@@ -661,10 +698,10 @@ img {
       height: 100%;
       background: rgba(19, 19, 19, 0.7); }
   .hero__content {
-    padding-bottom: 1.1rem;
+    padding-bottom: 2.5rem;
     position: relative;
     max-width: 47.587rem;
-    margin-left: 4.286rem; }
+    margin-left: 1.5rem; }
   .hero__text {
     font-family: 'Futura Book', serif;
     font-size: 1.571rem;
@@ -1132,12 +1169,6 @@ img {
   .modal__button {
     align-self: flex-end; }
 
-.success {
-  background-color: rgba(103, 181, 137, 0.1); }
-
-.input.invalid {
-  background-color: rgba(189, 90, 79, 0.1); }
-
 .projects {
   padding-bottom: 30rem; }
   .projects__section--dark {
@@ -1421,7 +1452,7 @@ img {
       color: #fff;
       line-height: 1.75rem;
       padding-top: 0.1rem;
-      margin-bottom: 3rem; }
+      margin-bottom: 1rem; }
   .section-title__word::after {
     display: none; }
   .types {
@@ -1479,6 +1510,9 @@ img {
     overflow: hidden; }
   .designs--dark {
     background-color: #252525; }
+  .designs__container {
+    padding: 1.9rem 1.5rem;
+    width: 100%; }
   .row {
     flex-direction: column; }
   .col-40, .col-60, .col-50 {

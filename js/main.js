@@ -30,6 +30,8 @@
 
 $(document).ready(function () {
   var modal = $('.modal'),
+      modalSuccess = $('.modal__success'),
+      modalError = $('.modal__error'),
       modalForm = $('.modal__form'),
       modalBtn = $('[data-toggle=modal]'),
       closeBtn = $('.modal__close'),
@@ -44,7 +46,7 @@ $(document).ready(function () {
     modal.toggleClass('modal--visibility');
   });
 
-  /*Обработчик события click на кнопку закрытия модального окна. После */
+  /*Обработчик события click на кнопку закрытия модального окна.*/
 
   $(document).on('click', function (evt) {
     if(evt.target.classList.contains('modal')) {
@@ -96,6 +98,7 @@ $(document).ready(function () {
   //Валидация форм
   // Форма модального окна
   $('.modal__form').validate({
+    errorElement: "div",
     errorClass: "invalid",
     validClass: "success",
     rules: {
@@ -131,10 +134,22 @@ $(document).ready(function () {
         email: "Email ожидается в формате name@domain.com"
       },
       policyCheckbox: "Вы должны согласиться с обработкой данных до отправки формы"
-    }
+    }/* ,
+    submitHandler: function (form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+
+          $(form)[0].reset();
+        }
+      }); 
+    }*/
   });
   //Форма блока контроль
   $('.control__form').validate({
+    errorElement: "div",
     errorClass: "invalid",
     validClass: "success",
     rules: {
@@ -166,6 +181,7 @@ $(document).ready(function () {
   });
   //Валидация формы footer
   $('.footer__form').validate({
+    errorElement: "div",
     errorClass: "invalid",
     validClass: "success",
     rules: {
@@ -198,5 +214,5 @@ $(document).ready(function () {
     }
   });
   // Маска для номера телефона
-  $('[type=tel]').mask('+7 (000) 000-00-00');
+  $('[type=tel]').mask('+7 (000) 000-00-00', {placeholder: "+7 (___) ___-__-__"});
 });

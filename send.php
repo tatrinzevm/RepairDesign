@@ -8,9 +8,9 @@
   <title>Repair Design Project</title>
   <?php
     $userName = $_POST['userName'];
-    $userEmail = $_POST['userEmail'];
+    if (isset($_POST['userEmail'])) {$userEmail = $_POST['userEmail'];}
     $userPhone = $_POST['userPhone'];
-    $userQuestion = $_POST['userQuestion'];
+    if (isset($_POST['userQuestion'])) {$userQuestion = $_POST['userQuestion'];}
     $formName = $_POST['formName'];
     $content = array (
       "success" => "",
@@ -53,20 +53,23 @@
       $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
       //Recipients
-      $mail->setFrom('tatrinzevm.orders@gmail.com', 'Repair Design');
+      $mail->setFrom('tatrinzevm.orders@gmail.com', '=?UTF-8?B?'.base64_encode('Сайт Repair Design').'?=');
       $mail->addAddress('tatrinzevm@gmail.com', '=?UTF-8?B?'.base64_encode('Максим').'?=');     // Add a recipient
 
       // Content
       $mail->isHTML(true);                                  // Set email format to HTML
       $mail->Subject = $subject;
-      $mail->Body    = $body;
+      $mail->Body = $body;
 
-      $mail->send();
+      if ($mail->send()) {
       $result = "success";
       $error = "";
+      } else {
+        $result = "error";
+        $error = $mail->ErrorInfo;
+      }
     } catch (Exception $e) {
-      $result = "error";
-      $error = $mail->ErrorInfo;
+      
     }
   ?>
 </head>

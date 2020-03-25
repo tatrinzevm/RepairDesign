@@ -48,14 +48,33 @@
     &-group
       display: flex
       flex-direction: column
+      position: relative
     &--light
       &::placeholder
         color: $light
         opacity: 1
   &__policy
+    position: relative
     margin-bottom: 2.7rem
+    & > .invalid
+      left: 0
+      bottom: -1.5rem
   &__button
     align-self: flex-end
+div
+  &.invalid
+    position: absolute
+    background-color: rgba(red, 0.3)
+    color: $light
+    text-align: center
+    padding: 1px
+    right: 0
+    bottom: -1.3rem
+.policy
+  & > div
+    &.invalid
+      width: 100%
+
 
 
 

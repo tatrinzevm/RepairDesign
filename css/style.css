@@ -1103,7 +1103,7 @@ img {
   max-width: 66.071rem;
   max-height: 33.214rem; }
 
-.modal {
+.modal, .modal__success, .modal__error {
   opacity: 0;
   visibility: hidden;
   position: fixed;
@@ -1118,16 +1118,23 @@ img {
   display: flex;
   align-items: center;
   justify-content: center; }
-  .modal--visibility {
+  .modal__container, .modal__success__container, .modal__error__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #131313; }
+  .modal--visibility, .modal__success--visibility, .modal__error--visibility {
     opacity: 1;
     visibility: visible; }
-  .modal__dialog {
+  .modal__dialog, .modal__success__dialog, .modal__error__dialog {
     position: relative;
     background: #131313 url("../img/bg-lines.svg") no-repeat center;
     padding: 2.357rem 3.5rem 1.928rem 3.5rem;
     color: #fff;
     max-width: 36.357rem; }
-  .modal__close {
+  .modal__close, .modal__success__close, .modal__error__close {
     position: absolute;
     top: 0;
     right: 0;
@@ -1137,46 +1144,53 @@ img {
     border: none;
     margin: 12px;
     cursor: pointer; }
-  .modal__title {
+  .modal__title, .modal__success__title, .modal__error__title {
     font-family: 'Yeseva One', cursive;
     font-size: 1.357rem;
     text-align: center;
     margin: 0;
     margin-bottom: 2.428rem; }
-  .modal__form {
+  .modal__text, .modal__success__text, .modal__error__text {
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    color: #e3b873; }
+  .modal__form, .modal__success__form, .modal__error__form {
     display: flex;
     flex-direction: column; }
-  .modal__input {
+  .modal__input, .modal__success__input, .modal__error__input {
     margin-bottom: 3.428rem; }
-    .modal__input:last-of-type {
+    .modal__input:last-of-type, .modal__success__input:last-of-type, .modal__error__input:last-of-type {
       margin-bottom: 1rem; }
-    .modal__input-group {
+    .modal__input-group, .modal__success__input-group, .modal__error__input-group {
       display: flex;
       flex-direction: column;
       position: relative; }
-    .modal__input--light::-webkit-input-placeholder {
+    .modal__input--light::-webkit-input-placeholder, .modal__success__input--light::-webkit-input-placeholder, .modal__error__input--light::-webkit-input-placeholder {
       color: #fff;
       opacity: 1; }
-    .modal__input--light::-moz-placeholder {
+    .modal__input--light::-moz-placeholder, .modal__success__input--light::-moz-placeholder, .modal__error__input--light::-moz-placeholder {
       color: #fff;
       opacity: 1; }
-    .modal__input--light:-ms-input-placeholder {
+    .modal__input--light:-ms-input-placeholder, .modal__success__input--light:-ms-input-placeholder, .modal__error__input--light:-ms-input-placeholder {
       color: #fff;
       opacity: 1; }
-    .modal__input--light::-ms-input-placeholder {
+    .modal__input--light::-ms-input-placeholder, .modal__success__input--light::-ms-input-placeholder, .modal__error__input--light::-ms-input-placeholder {
       color: #fff;
       opacity: 1; }
-    .modal__input--light::placeholder {
+    .modal__input--light::placeholder, .modal__success__input--light::placeholder, .modal__error__input--light::placeholder {
       color: #fff;
       opacity: 1; }
-  .modal__policy {
+  .modal__policy, .modal__success__policy, .modal__error__policy {
     position: relative;
     margin-bottom: 2.7rem; }
-    .modal__policy > .invalid {
+    .modal__policy > .invalid, .modal__success__policy > .invalid, .modal__error__policy > .invalid {
       left: 0;
       bottom: -1.5rem; }
-  .modal__button {
+  .modal__button, .modal__success__button, .modal__error__button {
     align-self: flex-end; }
+    .modal__button--OK, .modal__success__button--OK, .modal__error__button--OK {
+      padding: 0.5rem;
+      font-size: 1rem; }
 
 div.invalid {
   position: absolute;

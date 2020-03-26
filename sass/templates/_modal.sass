@@ -1,4 +1,4 @@
-.modal
+.modal, .modal__success, .modal__error
   opacity: 0
   visibility: hidden
   position: fixed
@@ -13,6 +13,13 @@
   display: flex
   align-items: center
   justify-content: center
+  &__container
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 2rem
+    background-color: $dark
   &--visibility
     opacity: 1
     visibility: visible
@@ -38,6 +45,10 @@
     text-align: center
     margin: 0
     margin-bottom: 2.428rem
+  &__text
+    margin-bottom: 3rem
+    font-size: 1.5rem
+    color: $primary
   &__form
     display: flex
     flex-direction: column
@@ -61,6 +72,9 @@
       bottom: -1.5rem
   &__button
     align-self: flex-end
+    &--OK
+      padding: 0.5rem
+      font-size: 1rem
 div
   &.invalid
     position: absolute

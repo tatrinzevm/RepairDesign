@@ -35,7 +35,8 @@ $(document).ready(function () {
       modalForm = $('.modal__form'),
       modalBtn = $('[data-toggle=modal]'),
       closeBtn = $('.modal__close'),
-      scrollUpBtn = $('.button__scroll-up__flex-block');
+      scrollUpBtn = $('.button__scroll-up__flex-block'),
+      modalBtnOK = $('.modal__button--OK');
   scrollUpBtn.addClass('button__scroll-up__flex-block--hidden');
   modalBtn.on('click', function () {
     modal.toggleClass('modal--visibility');
@@ -44,6 +45,12 @@ $(document).ready(function () {
   /*Привязка на кнопку отслеживания события click, которое вызывает открытие модального окна*/
   closeBtn.on('click', function () {
     modal.toggleClass('modal--visibility');
+  });
+  
+  modalBtnOK.on('click', function (evt) {
+    console.log(evt.target);
+    modalSuccess.removeClass('modal--visibility');
+    modalError.removeClass('modal--visibility');
   });
 
   /*Обработчик события click на кнопку закрытия модального окна.*/
@@ -57,7 +64,34 @@ $(document).ready(function () {
   $(document).on('keydown', function (evt) {
     console.dir(evt.keyCode);
     if(!modal.is(':hidden') && evt.keyCode == 27) {
-      modal.toggleClass('modal--visibility');
+      modal.removeClass('modal--visibility');
+    }
+  });
+// Модальное окно при успешной отправке
+  $(document).on('click', function (evt) {
+    if(evt.target.classList.contains('modal__success')) {
+      modalSuccess.removeClass('modal--visibility');
+    }
+  });
+
+  $(document).on('keydown', function (evt) {
+    console.dir(evt.keyCode);
+    if(!modalSuccess.is(':hidden') && evt.keyCode == 27) {
+      modalSuccess.removeClass('modal--visibility');
+    }
+  });
+
+  // Модальное окно при ошибке отправки
+  $(document).on('click', function (evt) {
+    if(evt.target.classList.contains('modal__error')) {
+      modalError.removeClass('modal--visibility');
+    }
+  });
+
+  $(document).on('keydown', function (evt) {
+    console.dir(evt.keyCode);
+    if(!modalError.is(':hidden') && evt.keyCode == 27) {
+      modalError.removeClass('modal--visibility');
     }
   });
 
@@ -134,18 +168,25 @@ $(document).ready(function () {
         email: "Email ожидается в формате name@domain.com"
       },
       policyCheckbox: "Вы должны согласиться с обработкой данных до отправки формы"
-    }/* ,
+    },
     submitHandler: function (form) {
       $.ajax({
         type: "POST",
         url: "send.php",
         data: $(form).serialize(),
         success: function (response) {
-
+          modal.removeClass('modal--visibility');
+          modalSuccess.addClass('modal--visibility');
           $(form)[0].reset();
+        },
+        error: function (response) {
+          modal.removeClass('modal--visibility');
+          modalError.addClass('modal--visibility');
+          $(form)[0].reset();
+          console.log(response);
         }
       }); 
-    }*/
+    }
   });
   //Форма блока контроль
   $('.control__form').validate({
@@ -177,6 +218,22 @@ $(document).ready(function () {
         maxlength: "Некорректный номер телефона"
       },
       controlPolicyCheckbox: "Вы должны согласиться с обработкой данных до отправки формы"
+    },
+    submitHandler: function (form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          modalSuccess.addClass('modal--visibility');
+          $(form)[0].reset();
+        },
+        error: function (response) {
+          modalError.addClass('modal--visibility');
+          $(form)[0].reset();
+          console.log(response);
+        }
+      }); 
     }
   });
   //Валидация формы footer
@@ -211,6 +268,22 @@ $(document).ready(function () {
       },
       userQuestion: "Пожалуйста, напишите свой вопрос",
       questionPolicyCheckbox: "Вы должны согласиться с обработкой данных до отправки формы"
+    },
+    submitHandler: function (form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          modalSuccess.addClass('modal--visibility');
+          $(form)[0].reset();
+        },
+        error: function (response) {
+          modalError.addClass('modal--visibility');
+          $(form)[0].reset();
+          console.log(response);
+        }
+      }); 
     }
   });
   // Маска для номера телефона
